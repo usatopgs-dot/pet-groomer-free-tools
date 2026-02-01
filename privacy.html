@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Privacy Policy – Pet Groomer Free Tools</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <a class="brand" href="index.html"><span class="brand-badge">PG</span>Pet Groomer Free Tools</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <nav class="navlinks" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="downloads.html">Free Downloads</a>
+      <a href="generate-qr.html">Review QR</a>
+      <a href="poster.html">QR Poster</a>
+      <a href="review-sms.html">Review SMS</a>
+      <a href="negative-replies.html">Negative Replies</a>
+      <a href="reminder-system.html">Reminders</a>
+      <a href="promo-calendar.html">Promo Calendar</a>
+      <a href="whatsapp.html">WhatsApp QR</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<main class="container">
+  <section class="hero">
+    <div class="kicker">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="small">Last updated: January 31, 2026</p>
+  </section>
+
+  <section class="card">
+    
+<h3>What this site is</h3>
+<p>Pet Groomer Free Tools provides free, browser-based tools and message templates for pet grooming businesses.</p>
+
+<h3>Information we collect</h3>
+<p>We do not ask you to create an account and we do not collect personal information through forms on this website.</p>
+<p>Some tools run entirely in your browser. Any text you type (business name, phone, address, messages) stays on your device unless you choose to copy or download it.</p>
+
+<h3>Third-party links, CPA offers, and ads</h3>
+<p>This website may contain affiliate links, CPA offers, or other advertisements. If you click an external offer, you will be taken to a third-party website that may collect information (including email) according to their own privacy policy.</p>
+
+<h3>Cookies and tracking</h3>
+<p>We may use basic analytics. Third parties may use cookies or similar technologies to measure conversions or show relevant ads.</p>
+
+<h3>Contact</h3>
+<p>If you have questions, email us at <strong>Support@frontendin.com</strong>.</p>
+
+  </section>
+</main>
+
+
+<footer class="container">
+  <div class="small">
+    Contact: <a href="mailto:Support@frontendin.com">Support@frontendin.com</a>
+    <span style="opacity:.6"> • </span>
+    <a href="privacy.html">Privacy Policy</a>
+    <span style="opacity:.6"> • </span>
+    <a href="terms.html">Terms</a>
+    <span style="opacity:.6"> • </span>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('.navlinks a').forEach(a=>{
+    const href=(a.getAttribute('href')||'').toLowerCase();
+    if(href===path) a.classList.add('active');
+  });
+
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('navLinks');
+  const backdrop = document.getElementById('navBackdrop');
+  function closeNav(){
+    nav.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    backdrop.classList.remove('show');
+  }
+  function openNav(){
+    nav.classList.add('open');
+    document.body.classList.add('nav-open');
+    backdrop.classList.add('show');
+  }
+  if(btn && nav) btn.addEventListener('click', ()=> nav.classList.contains('open') ? closeNav() : openNav());
+  if(backdrop) backdrop.addEventListener('click', closeNav);
+  window.addEventListener('resize', ()=>{ if(window.innerWidth > 820) closeNav(); });
+})();
+</script>
+</body>
+</html>
