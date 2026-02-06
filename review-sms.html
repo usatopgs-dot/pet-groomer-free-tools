@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Review SMS (100) – Pet Groomer Free Tools</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <a class="brand" href="index.html"><span class="brand-badge">PG</span>Pet Groomer Free Tools</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <nav class="navlinks" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="downloads.html">Free Downloads</a>
+      <a href="generate-qr.html">Review QR</a>
+      <a href="poster.html">QR Poster</a>
+      <a href="review-sms.html">Review SMS</a>
+      <a href="negative-replies.html">Negative Replies</a>
+      <a href="reminder-system.html">Reminders</a>
+      <a href="promo-calendar.html">Promo Calendar</a>
+<a href="whatsapp.html">WhatsApp QR</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<main class="container">
+  <section class="hero">
+    <div class="kicker">Copy • paste • send</div>
+    <h1>100 Google Review SMS Templates</h1>
+    <p>Replace placeholders like <strong>[Name]</strong>, <strong>[Pet Name]</strong>, <strong>[Business Name]</strong>, <strong>[Link]</strong>.</p>
+    <div class="btnrow">
+      <button class="btn" id="copyAllBtn">Copy All</button>
+      <button class="btn secondary" id="downloadPdfBtn">Download PDF</button>
+    </div>
+  </section>
+
+<div class="card" style="margin:18px 0">
+  <strong>Optional: automate review requests</strong>
+  <p class="small" style="margin-top:6px">Want to send review requests automatically after each appointment? Try this free tool.</p>
+  <a class="btn" href="https://appverification.site/sl/pp5qy" target="_blank" rel="nofollow noopener">Try review automation</a>
+</div>
+
+  <section id="list"></section>
+</main>
+
+<footer class="container">
+  <div class="small">
+    Contact: <a href="mailto:info@pickquotes.com">info@pickquotes.com</a>
+    <span style="opacity:.6"> • </span>
+    <a href="privacy.html">Privacy Policy</a>
+    <span style="opacity:.6"> • </span>
+    <a href="terms.html">Terms</a>
+    <span style="opacity:.6"> • </span>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script>
+  const MESSAGES = `1) Hi [Name], thanks for bringing [Pet Name] to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n2) Hi [Customer Name]! We loved grooming your pup. A short Google review really helps our small business: [Link]\n3) Thanks again, [First Name]. If you have 30 seconds, please share your experience on Google: [Link]\n4) Hi [Name], we hope your pet is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n5) Hello [Customer Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n6) Hi [First Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n7) Thanks for choosing [Business Name], [Name]. Please tap and leave a Google review when you can: [Link]\n8) Hi [Customer Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n9) Hello [First Name]! We appreciate you. Please leave your Google review here: [Link]\n10) Hi [Name]. If you enjoyed today’s groom for your pup, we’d love your Google review: [Link]\n11) Hi [Customer Name], thanks for bringing your dog to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n12) Hi [First Name]! We loved grooming your pet. A short Google review really helps our small business: [Link]\n13) Thanks again, [Name]. If you have 30 seconds, please share your experience on Google: [Link]\n14) Hi [Customer Name], we hope your pup is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n15) Hello [First Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n16) Hi [Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n17) Thanks for choosing [Business Name], [Customer Name]. Please tap and leave a Google review when you can: [Link]\n18) Hi [First Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n19) Hello [Name]! We appreciate you. Please leave your Google review here: [Link]\n20) Hi [Customer Name]. If you enjoyed today’s groom for your pet, we’d love your Google review: [Link]\n21) Hi [First Name], thanks for bringing [Pet Name] to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n22) Hi [Name]! We loved grooming your pup. A short Google review really helps our small business: [Link]\n23) Thanks again, [Customer Name]. If you have 30 seconds, please share your experience on Google: [Link]\n24) Hi [First Name], we hope your pet is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n25) Hello [Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n26) Hi [Customer Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n27) Thanks for choosing [Business Name], [First Name]. Please tap and leave a Google review when you can: [Link]\n28) Hi [Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n29) Hello [Customer Name]! We appreciate you. Please leave your Google review here: [Link]\n30) Hi [First Name]. If you enjoyed today’s groom for your pup, we’d love your Google review: [Link]\n31) Hi [Name], thanks for bringing your dog to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n32) Hi [Customer Name]! We loved grooming your pet. A short Google review really helps our small business: [Link]\n33) Thanks again, [First Name]. If you have 30 seconds, please share your experience on Google: [Link]\n34) Hi [Name], we hope your pup is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n35) Hello [Customer Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n36) Hi [First Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n37) Thanks for choosing [Business Name], [Name]. Please tap and leave a Google review when you can: [Link]\n38) Hi [Customer Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n39) Hello [First Name]! We appreciate you. Please leave your Google review here: [Link]\n40) Hi [Name]. If you enjoyed today’s groom for your pet, we’d love your Google review: [Link]\n41) Hi [Customer Name], thanks for bringing [Pet Name] to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n42) Hi [First Name]! We loved grooming your pup. A short Google review really helps our small business: [Link]\n43) Thanks again, [Name]. If you have 30 seconds, please share your experience on Google: [Link]\n44) Hi [Customer Name], we hope your pet is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n45) Hello [First Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n46) Hi [Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n47) Thanks for choosing [Business Name], [Customer Name]. Please tap and leave a Google review when you can: [Link]\n48) Hi [First Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n49) Hello [Name]! We appreciate you. Please leave your Google review here: [Link]\n50) Hi [Customer Name]. If you enjoyed today’s groom for your pup, we’d love your Google review: [Link]\n51) Hi [First Name], thanks for bringing your dog to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n52) Hi [Name]! We loved grooming your pet. A short Google review really helps our small business: [Link]\n53) Thanks again, [Customer Name]. If you have 30 seconds, please share your experience on Google: [Link]\n54) Hi [First Name], we hope your pup is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n55) Hello [Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n56) Hi [Customer Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n57) Thanks for choosing [Business Name], [First Name]. Please tap and leave a Google review when you can: [Link]\n58) Hi [Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n59) Hello [Customer Name]! We appreciate you. Please leave your Google review here: [Link]\n60) Hi [First Name]. If you enjoyed today’s groom for your pet, we’d love your Google review: [Link]\n61) Hi [Name], thanks for bringing [Pet Name] to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n62) Hi [Customer Name]! We loved grooming your pup. A short Google review really helps our small business: [Link]\n63) Thanks again, [First Name]. If you have 30 seconds, please share your experience on Google: [Link]\n64) Hi [Name], we hope your pet is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n65) Hello [Customer Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n66) Hi [First Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n67) Thanks for choosing [Business Name], [Name]. Please tap and leave a Google review when you can: [Link]\n68) Hi [Customer Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n69) Hello [First Name]! We appreciate you. Please leave your Google review here: [Link]\n70) Hi [Name]. If you enjoyed today’s groom for your pup, we’d love your Google review: [Link]\n71) Hi [Customer Name], thanks for bringing your dog to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n72) Hi [First Name]! We loved grooming your pet. A short Google review really helps our small business: [Link]\n73) Thanks again, [Name]. If you have 30 seconds, please share your experience on Google: [Link]\n74) Hi [Customer Name], we hope your pup is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n75) Hello [First Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n76) Hi [Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n77) Thanks for choosing [Business Name], [Customer Name]. Please tap and leave a Google review when you can: [Link]\n78) Hi [First Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n79) Hello [Name]! We appreciate you. Please leave your Google review here: [Link]\n80) Hi [Customer Name]. If you enjoyed today’s groom for your pet, we’d love your Google review: [Link]\n81) Hi [First Name], thanks for bringing [Pet Name] to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n82) Hi [Name]! We loved grooming your pup. A short Google review really helps our small business: [Link]\n83) Thanks again, [Customer Name]. If you have 30 seconds, please share your experience on Google: [Link]\n84) Hi [First Name], we hope your pet is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n85) Hello [Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n86) Hi [Customer Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n87) Thanks for choosing [Business Name], [First Name]. Please tap and leave a Google review when you can: [Link]\n88) Hi [Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n89) Hello [Customer Name]! We appreciate you. Please leave your Google review here: [Link]\n90) Hi [First Name]. If you enjoyed today’s groom for your pup, we’d love your Google review: [Link]\n91) Hi [Name], thanks for bringing your dog to [Business Name] today. If you were happy with the service, could you leave a quick Google review? [Link]\n92) Hi [Customer Name]! We loved grooming your pet. A short Google review really helps our small business: [Link]\n93) Thanks again, [First Name]. If you have 30 seconds, please share your experience on Google: [Link]\n94) Hi [Name], we hope your pup is feeling fresh! Would you mind leaving a Google review for [Business Name]? [Link]\n95) Hello [Customer Name]. Your feedback helps other pet parents. Please leave a Google review here: [Link]\n96) Hi [First Name]! If anything wasn’t perfect today, reply here and we’ll fix it. Otherwise, a Google review would mean a lot: [Link]\n97) Thanks for choosing [Business Name], [Name]. Please tap and leave a Google review when you can: [Link]\n98) Hi [Customer Name]. Could you help us with a quick 5-star Google review? It makes a big difference: [Link]\n99) Hello [First Name]! We appreciate you. Please leave your Google review here: [Link]\n100) Hi [Name]. If you enjoyed today’s groom for your pet, we’d love your Google review: [Link]`.split("\n");
+  const listEl = document.getElementById("list");
+
+  async function copyText(text){
+    try{ await navigator.clipboard.writeText(text); }catch(e){
+      const ta=document.createElement("textarea"); ta.value=text;
+      document.body.appendChild(ta); ta.select(); document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+  }
+
+  function addItem(text){
+    const card=document.createElement("div");
+    card.className="listcard";
+    const p=document.createElement("p");
+    p.textContent=text;
+    const row=document.createElement("div");
+    row.className="btnrow";
+    const b=document.createElement("button");
+    b.className="btn secondary";
+    b.textContent="Copy";
+    b.onclick=()=>copyText(text);
+    row.appendChild(b);
+    card.appendChild(p); card.appendChild(row);
+    listEl.appendChild(card);
+  }
+
+  MESSAGES.forEach(addItem);
+  document.getElementById("copyAllBtn").onclick=()=>copyText(MESSAGES.join("\n\n"));
+
+  document.getElementById("downloadPdfBtn").onclick=()=>{
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    let y = 12;
+
+    doc.setFontSize(14);
+    doc.text("100 Google Review SMS Templates", 10, y); y += 8;
+    doc.setFontSize(10);
+    doc.text("Placeholders: [Name], [Pet Name], [Business Name], [Link]", 10, y); y += 10;
+
+    doc.setFontSize(10);
+    MESSAGES.forEach((m)=>{
+      const lines = doc.splitTextToSize(m, 190);
+      lines.forEach((ln)=>{
+        if (y > 280) { doc.addPage(); y = 12; }
+        doc.text(ln, 10, y);
+        y += 6;
+      });
+      y += 2;
+    });
+    doc.save("review-sms-100.pdf");
+  };
+</script>
+
+
+<script>
+(function(){
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('.navlinks a').forEach(a=>{
+    const href=(a.getAttribute('href')||'').toLowerCase();
+    if(href===path){ a.classList.add('active'); }
+  });
+
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('navLinks');
+  const backdrop = document.getElementById('navBackdrop');
+
+  function closeNav(){
+    if(!nav) return;
+    nav.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    if(backdrop) backdrop.classList.remove('show');
+  }
+  function openNav(){
+    if(!nav) return;
+    nav.classList.add('open');
+    document.body.classList.add('nav-open');
+    if(backdrop) backdrop.classList.add('show');
+  }
+  if(btn && nav){
+    btn.addEventListener('click', ()=>{
+      nav.classList.contains('open') ? closeNav() : openNav();
+    });
+  }
+  if(backdrop){
+    backdrop.addEventListener('click', closeNav);
+  }
+  window.addEventListener('resize', ()=>{
+    if(window.innerWidth > 820) closeNav();
+  });
+})();
+</script>
+</body>
+</html>

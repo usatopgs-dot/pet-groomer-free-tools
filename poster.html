@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>QR Poster – Pet Groomer Free Tools</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <a class="brand" href="index.html"><span class="brand-badge">PG</span>Pet Groomer Free Tools</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <nav class="navlinks" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="downloads.html">Free Downloads</a>
+      <a href="generate-qr.html">Review QR</a>
+      <a href="poster.html">QR Poster</a>
+      <a href="review-sms.html">Review SMS</a>
+      <a href="negative-replies.html">Negative Replies</a>
+      <a href="reminder-system.html">Reminders</a>
+      <a href="promo-calendar.html">Promo Calendar</a>
+<a href="whatsapp.html">WhatsApp QR</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<main class="container">
+  <section class="hero">
+    <div class="kicker">Printable poster</div>
+    <h1>Google Review QR Poster Generator</h1>
+    <p>Fill your business details, generate a poster, and download as a printable PNG.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card half">
+      <label for="bizName">Business name</label>
+      <input id="bizName" type="text" placeholder="Happy Paws Grooming" style="margin-top:8px" />
+
+      <div style="height:10px"></div>
+      <label for="phone">Phone</label>
+      <input id="phone" type="text" placeholder="+1 555-123-4567" style="margin-top:8px" />
+
+      <div style="height:10px"></div>
+      <label for="address">Address</label>
+      <input id="address" type="text" placeholder="123 Main St, City" style="margin-top:8px" />
+
+      <div style="height:10px"></div>
+      <label for="reviewLink">Google review link</label>
+      <input id="reviewLink" type="text" placeholder="https://maps.google.com/..." style="margin-top:8px" />
+
+      <div class="btnrow">
+        <button class="btn" id="generateBtn">Generate Poster</button>
+        <button class="btn secondary" id="downloadBtn" disabled>Download PNG</button>
+      </div>
+
+      <div class="small" style="margin-top:10px">
+        Tip: Put this poster at your front desk or checkout area.
+      </div>
+    </div>
+
+    <div class="card half" id="previewWrap" style="display:none">
+      <div id="poster" style="max-width:420px;margin:0 auto;padding:18px;border-radius:22px;background:#fff;border:1px solid var(--border)">
+        <div style="text-align:center">
+          <div style="font-weight:900;font-size:22px" id="pName">Business Name</div>
+          <div class="small" id="pAddress" style="margin-top:6px">Address</div>
+          <div class="small" id="pPhone" style="margin-top:4px">Phone</div>
+
+          <div style="margin:14px auto 10px" id="qrBox"></div>
+
+          <div style="font-weight:900;font-size:20px;margin-top:10px">Scan to Leave a Review</div>
+          <div class="small" style="margin-top:6px">Thank you for supporting our small business!</div>
+        </div>
+      </div>
+      <div class="small" style="margin-top:10px;text-align:center">Preview</div>
+    </div>
+  </section>
+</main>
+
+<footer class="container">
+  <div class="small">
+    Contact: <a href="mailto:info@pickquotes.com">info@pickquotes.com</a>
+    <span style="opacity:.6"> • </span>
+    <a href="privacy.html">Privacy Policy</a>
+    <span style="opacity:.6"> • </span>
+    <a href="terms.html">Terms</a>
+    <span style="opacity:.6"> • </span>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+  const bizName=document.getElementById("bizName");
+  const phone=document.getElementById("phone");
+  const address=document.getElementById("address");
+  const reviewLink=document.getElementById("reviewLink");
+  const generateBtn=document.getElementById("generateBtn");
+  const downloadBtn=document.getElementById("downloadBtn");
+
+  const previewWrap=document.getElementById("previewWrap");
+  const pName=document.getElementById("pName");
+  const pPhone=document.getElementById("pPhone");
+  const pAddress=document.getElementById("pAddress");
+  const qrBox=document.getElementById("qrBox");
+
+  function isValidUrl(url){ return /^https?:\/\//i.test((url||"").trim()); }
+
+  generateBtn.onclick=()=>{
+    const name=(bizName.value||"").trim();
+    const link=(reviewLink.value||"").trim();
+
+    if(!name || !link){
+      alert("Business name and Google review link are required.");
+      return;
+    }
+    if(!isValidUrl(link)){
+      alert("Please enter a valid Google review link.");
+      return;
+    }
+
+    pName.textContent=name;
+    pPhone.textContent=(phone.value||"").trim();
+    pAddress.textContent=(address.value||"").trim();
+
+    qrBox.innerHTML="";
+    new QRCode(qrBox,{
+      text:link,
+      width:220,
+      height:220,
+      correctLevel:QRCode.CorrectLevel.H
+    });
+
+    previewWrap.style.display="block";
+    downloadBtn.disabled=false;
+  };
+
+  downloadBtn.onclick=async ()=>{
+    const poster=document.getElementById("poster");
+    const canvas=await html2canvas(poster,{scale:2});
+    const a=document.createElement("a");
+    a.href=canvas.toDataURL("image/png");
+    a.download="google-review-poster.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+</script>
+
+
+<script>
+(function(){
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('.navlinks a').forEach(a=>{
+    const href=(a.getAttribute('href')||'').toLowerCase();
+    if(href===path){ a.classList.add('active'); }
+  });
+
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('navLinks');
+  const backdrop = document.getElementById('navBackdrop');
+
+  function closeNav(){
+    if(!nav) return;
+    nav.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    if(backdrop) backdrop.classList.remove('show');
+  }
+  function openNav(){
+    if(!nav) return;
+    nav.classList.add('open');
+    document.body.classList.add('nav-open');
+    if(backdrop) backdrop.classList.add('show');
+  }
+  if(btn && nav){
+    btn.addEventListener('click', ()=>{
+      nav.classList.contains('open') ? closeNav() : openNav();
+    });
+  }
+  if(backdrop){
+    backdrop.addEventListener('click', closeNav);
+  }
+  window.addEventListener('resize', ()=>{
+    if(window.innerWidth > 820) closeNav();
+  });
+})();
+</script>
+</body>
+</html>
